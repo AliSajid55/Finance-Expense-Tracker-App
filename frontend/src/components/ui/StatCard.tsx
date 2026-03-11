@@ -6,10 +6,10 @@ interface StatCardProps {
 }
 
 const colorMap = {
-  blue: "bg-blue-50 text-blue-600",
-  green: "bg-green-50 text-green-600",
-  purple: "bg-purple-50 text-purple-600",
-  orange: "bg-orange-50 text-orange-600",
+  blue: "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400",
+  green: "bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400",
+  purple: "bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400",
+  orange: "bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400",
 }
 
 export default function StatCard({ title, value, icon, color = "blue" }: StatCardProps) {
@@ -19,8 +19,8 @@ export default function StatCard({ title, value, icon, color = "blue" }: StatCar
         {icon}
       </div>
       <div>
-        <p className="text-sm text-gray-500">{title}</p>
-        <p className="text-2xl font-bold text-gray-800">{value}</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400">{title}</p>
+        <p className="text-2xl font-bold text-gray-800 dark:text-gray-100">{value}</p>
       </div>
     </div>
   )

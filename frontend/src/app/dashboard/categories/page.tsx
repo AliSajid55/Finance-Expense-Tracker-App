@@ -40,8 +40,8 @@ export default function CategoriesPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-800">Categories</h1>
-          <p className="text-gray-500 mt-1">Organize your expenses into categories</p>
+          <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Categories</h1>
+          <p className="text-gray-500 dark:text-gray-400 mt-1">Organize your expenses into categories</p>
         </div>
         <button onClick={() => { setShowModal(true); setName(""); setError("") }} className="btn-primary">
           + New Category
@@ -60,8 +60,8 @@ export default function CategoriesPage() {
           {categories.map((category) => (
             <div key={category.id} className="card flex items-center justify-between">
               <div>
-                <p className="font-semibold text-gray-800">{category.name}</p>
-                <p className="text-xs text-gray-400 mt-1">Created {formatDate(category.created_at)}</p>
+                <p className="font-semibold text-gray-800 dark:text-gray-100">{category.name}</p>
+                <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">Created {formatDate(category.created_at)}</p>
               </div>
               <button
                 onClick={() => handleDelete(category.id)}

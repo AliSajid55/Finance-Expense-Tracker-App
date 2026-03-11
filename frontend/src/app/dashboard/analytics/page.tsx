@@ -72,8 +72,8 @@ export default function AnalyticsPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-gray-800">Analytics</h1>
-        <p className="text-gray-500 mt-1">Visualize your spending patterns</p>
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Analytics</h1>
+        <p className="text-gray-500 dark:text-gray-400 mt-1">Visualize your spending patterns</p>
       </div>
 
       {/* Summary */}
@@ -102,7 +102,7 @@ export default function AnalyticsPage() {
           {/* Monthly Bar Chart */}
           {monthlyData.length > 0 && (
             <div className="card">
-              <h2 className="text-lg font-semibold text-gray-800 mb-6">Monthly Spending</h2>
+              <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-6">Monthly Spending</h2>
               <ResponsiveContainer width="100%" height={280}>
                 <BarChart data={monthlyData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" />
@@ -121,7 +121,7 @@ export default function AnalyticsPage() {
           {/* Category Pie Chart */}
           {categoryData.length > 0 && (
             <div className="card">
-              <h2 className="text-lg font-semibold text-gray-800 mb-6">Spending by Category</h2>
+              <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-6">Spending by Category</h2>
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <ResponsiveContainer width="100%" height={280}>
                   <PieChart>
@@ -155,9 +155,9 @@ export default function AnalyticsPage() {
                           className="w-3 h-3 rounded-full"
                           style={{ backgroundColor: COLORS[i % COLORS.length] }}
                         />
-                        <span className="text-sm text-gray-700">{cat.name}</span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">{cat.name}</span>
                       </div>
-                      <span className="text-sm font-semibold text-gray-800">{formatCurrency(cat.total)}</span>
+                      <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">{formatCurrency(cat.total)}</span>
                     </div>
                   ))}
               </div>

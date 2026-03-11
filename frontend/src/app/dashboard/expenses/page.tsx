@@ -90,8 +90,8 @@ export default function ExpensesPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-800">Expenses</h1>
-          <p className="text-gray-500 mt-1">Manage all your expenses</p>
+          <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Expenses</h1>
+          <p className="text-gray-500 dark:text-gray-400 mt-1">Manage all your expenses</p>
         </div>
         <button onClick={openAdd} className="btn-primary">
           + Add Expense
@@ -129,20 +129,20 @@ export default function ExpensesPage() {
           </div>
         ) : (
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 border-b border-gray-100">
+            <thead className="bg-gray-50 dark:bg-gray-700/50 border-b border-gray-100 dark:border-gray-700">
               <tr>
-                <th className="text-left px-6 py-3 text-gray-500 font-medium">Date</th>
-                <th className="text-left px-6 py-3 text-gray-500 font-medium">Description</th>
-                <th className="text-left px-6 py-3 text-gray-500 font-medium">Category</th>
-                <th className="text-right px-6 py-3 text-gray-500 font-medium">Amount</th>
+                <th className="text-left px-6 py-3 text-gray-500 dark:text-gray-400 font-medium">Date</th>
+                <th className="text-left px-6 py-3 text-gray-500 dark:text-gray-400 font-medium">Description</th>
+                <th className="text-left px-6 py-3 text-gray-500 dark:text-gray-400 font-medium">Category</th>
+                <th className="text-right px-6 py-3 text-gray-500 dark:text-gray-400 font-medium">Amount</th>
                 <th className="px-6 py-3"></th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-50">
+            <tbody className="divide-y divide-gray-50 dark:divide-gray-700">
               {filtered.map((expense) => (
-                <tr key={expense.id} className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-3 text-gray-500">{formatDate(expense.expense_date)}</td>
-                  <td className="px-6 py-3 text-gray-800">{expense.description || <span className="text-gray-400 italic">No description</span>}</td>
+                <tr key={expense.id} className="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                  <td className="px-6 py-3 text-gray-500 dark:text-gray-400">{formatDate(expense.expense_date)}</td>
+                  <td className="px-6 py-3 text-gray-800 dark:text-gray-200">{expense.description || <span className="text-gray-400 dark:text-gray-500 italic">No description</span>}</td>
                   <td className="px-6 py-3">
                     <span className="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-xs font-medium">
                       {getCategoryName(expense.category_id)}

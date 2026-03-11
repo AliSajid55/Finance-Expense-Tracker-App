@@ -45,8 +45,8 @@ export default function Dashboard() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
-        <p className="text-gray-500 mt-1">Welcome back! Here is your financial overview.</p>
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Dashboard</h1>
+        <p className="text-gray-500 dark:text-gray-400 mt-1">Welcome back! Here is your financial overview.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -57,7 +57,7 @@ export default function Dashboard() {
 
       <div className="card">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold text-gray-800">Recent Expenses</h2>
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Recent Expenses</h2>
           <Link href="/dashboard/expenses" className="text-sm text-blue-600 hover:underline">
             View all
           </Link>
@@ -76,10 +76,10 @@ export default function Dashboard() {
             {recentExpenses.map((expense) => (
               <div key={expense.id} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
                 <div>
-                  <p className="text-sm font-medium text-gray-800">
+                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
                     {expense.description || "No description"}
                   </p>
-                  <p className="text-xs text-gray-400">{expense.expense_date}</p>
+                  <p className="text-xs text-gray-400 dark:text-gray-500">{expense.expense_date}</p>
                 </div>
                 <span className="text-sm font-semibold text-red-500">
                   -{formatCurrency(expense.amount)}
@@ -93,19 +93,19 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Link href="/dashboard/expenses" className="card hover:shadow-md transition-shadow cursor-pointer block">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl">💸</div>
+            <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-2xl">💸</div>
             <div>
-              <p className="font-semibold text-gray-800">Manage Expenses</p>
-              <p className="text-sm text-gray-500">Add, edit, or delete expenses</p>
+              <p className="font-semibold text-gray-800 dark:text-gray-100">Manage Expenses</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Add, edit, or delete expenses</p>
             </div>
           </div>
         </Link>
         <Link href="/dashboard/analytics" className="card hover:shadow-md transition-shadow cursor-pointer block">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-2xl">📈</div>
+            <div className="w-12 h-12 bg-purple-50 dark:bg-purple-900/30 rounded-xl flex items-center justify-center text-2xl">📈</div>
             <div>
-              <p className="font-semibold text-gray-800">View Analytics</p>
-              <p className="text-sm text-gray-500">Monthly summary and charts</p>
+              <p className="font-semibold text-gray-800 dark:text-gray-100">View Analytics</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Monthly summary and charts</p>
             </div>
           </div>
         </Link>
